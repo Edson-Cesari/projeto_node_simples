@@ -50,12 +50,24 @@ const bodyParser = require("body-parser");
             res.render("comum/index");
         });
 
+
+        //testes
+        app.get("/testes",(req,res)=>{
+            let msg2 = {
+                nome: 'ciclano',
+                tipo: "fulano" ,
+                pais: "Brasil"
+            }
+            res.render("comum/teste",{msg2:msg2})
+        })
+
         //Fale conosco
             //Carregando os servicos
             app.get("/faleConosco",(req,res)=>{
+
                 Servico.find().sort({date: 'desc'}).then((servicos)=>{
                     res.render("comum/faleConosco",{servicos: servicos});
-        
+                   
                 }).catch((err)=>{
                     console.log("Ocorreu um erro ao trazer os Servicos, ERRO:"+err);
                     res.redirect("/faleConosco");
@@ -77,13 +89,15 @@ const bodyParser = require("body-parser");
                     servicos: req.body.servicos,
                     mensagem: req.body.mensagem
                 }
+                
                 new Pedido(novoPedido).save().then(()=>{
+
                     console.log("Pedido criado com sucesso!");
                     res.redirect("/faleConosco");
-
+                    
                 }).catch((err)=>{
                     console.log("Ocorreu um erro ao criar o pedido, ERRO:"+err);
-                    res.redirect("/faleConosco");
+                    res.redirect("/faleConosco",);
                 });
             });
             

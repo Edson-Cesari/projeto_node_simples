@@ -52,4 +52,3 @@ function fecharMensagem(){
         janelaMensagem.style.display = "none";
     }, 500);
 }
-

@@ -14,8 +14,6 @@
     const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     const telRegex = /^\(?(\d{2})\)?[- ]?(\d{5})[- ]?(\d{4})$/;
 
-    const adicionar_mensagem = document.querySelector('.mesagemsBD');
-
 //Funcoes comuns.
     // Aponta o erro dentro o HTML.
     function apontar_erro(index,mensagem){
@@ -35,13 +33,6 @@
             todosInputs[i]="";
         });
     }
-
-    //Criar Mensagem
-    function addMensagem(mensagem){
-        adicionar_mensagem.innerHTML= mensagem;
-        adicionar_mensagem.classList.add('mensagemBD-OK');
-    }
-
 
     //funcoes individuais.
         //validacao nome (pessoas, objetos, etc...)
@@ -132,10 +123,8 @@
         //caso todas as validaçoes retornem true..
         if(validar_nome() && validar_email()  && validar_telefone() && validar_select() && validar_mensagem() && validar_checkbox()){
             limpar_campos();
-            addMensagem("Salvo com sucesso!");
-            setTimeout(() => {
-                formulario_Fale_Conosco.submit(); // Realiza a validação do formulario.
-            }, 2500);
+            formulario_Fale_Conosco.submit(); // Realiza a validação do formulario.
+            
         }
     })
 
