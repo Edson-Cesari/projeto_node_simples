@@ -1,0 +1,27 @@
+.botao-padrao{
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 20px;
+    border: none;
+}
+.botao-enviar{
+    background-color: rgba(19, 104, 147, 0.98);
+    color: white;
+}
+.botao-editar{
+    background-color: rgba(59, 125, 23, 0.98);
+    color: white;
+}
+.botao-excluir{
+    background-color: rgba(108, 24, 24, 0.98);
+    color: white;
+}
+.botao-cancelar{
+    background-color: rgba(118, 118, 45, 0.98);
+    color: rgb(0, 0, 0);
+}
+.botao-aceitar{
+    background-color: rgba(181, 99, 32, 0.98);
+    color: rgb(255, 255, 255);
+}

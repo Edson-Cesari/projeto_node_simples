@@ -1,0 +1,42 @@
+
+   <div class="JumbotonBox">
+     <h1 class="titulo-topo">Serviços e Soluções</h1>
+     <img class="imagemTopo" src="/imagens/conteudos/admin/adm14Image.jpg" alt="" />
+     <p>Esta é a area de administração de serviços e soluções. Nesta área voce poderá: incluir, editar, excluir e visualizar todos os serviços e soluções prestados pela Future4Tech.</p>
+    </div>
+
+  <section>
+          <div class="painelComandos2">
+              <a href="/admin/addServicos"><button class="botao-padrao botao-enviar">Criar um Servico</button></a>
+          </div>
+          <hr>
+            {{#each servicos}}
+            <div class="boX">
+                <div class="divSumary">
+                    <details>
+                        <summary>{{nome}}</summary>
+                        <p class="pTextos">
+                            {{descricao}}
+                        </p>
+                        <div>
+                            <hr>
+                            <small class="detalhesData">Serviço criado em: {{data}}</small>
+                        </div>
+                        <div class="painelComandos">
+                              <a href="/admin/servicos/edit/{{_id}}"><button class="botao-padrao botao-editar">Editar</button></a>
+
+                              <form id="botao-escluir-box" action="/admin/servicos/deletar" method="post">
+                                <input type="hidden" name="id" value="{{_id}}">
+                                <button class="botao-padrao botao-excluir" type="submit">Excluir</button>
+                              </form>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            {{else}}
+            <h4>Nenhum Serviço cadastrado.</h4>
+            {{/each}}
+
+</section>
+
+

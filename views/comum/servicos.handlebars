@@ -1,0 +1,29 @@
+ 
+    <div class="JumbotonBox">
+     <h1 class="titulo-topo">Soluções</h1>
+     <img class="imagemTopo" src="/imagens/conteudos/admin/adm14Image.jpg" alt="" />
+    </div>
+    <section>
+            
+            {{#each servicos}}
+            <div class="boX">
+                <div class="divSumary">
+                    <details>
+                        <summary>{{nome}}</summary>
+                        <p class="pTextos">
+                            {{descricao}}
+                        </p>
+                        <div>
+                            <hr>
+                            <small class="detalhesData" >Serviço valido desde: {{data}}</small>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            {{else}}
+            <h4>Nenhum Serviço cadastrado.</h4>
+            {{/each}}
+
+</section>
+
+ 

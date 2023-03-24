@@ -1,0 +1,16 @@
+.caixaCorreta{
+    background-color: rgb(212, 253, 212);
+}
+.caixaErrada{
+    background-color: rgb(249, 208, 205);
+    color: black;
+}
+.helper{
+    background-color: black;
+    color: rgb(241, 138, 138);
+    font-size: 12px;
+}
+.textoErrado{
+    font-weight: 700;
+    color: rgb(76, 0, 0); 
+}

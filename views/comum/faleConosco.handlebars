@@ -1,0 +1,145 @@
+<div class="JumbotonBox">
+  <h1 class="titulo-topo">Fale Conosco</h1>
+  <img
+    class="imagemTopo"
+    src="/imagens/conteudos/admin/adm15Image.jpg"
+    alt=""
+  />
+</div>
+
+<div class="caixa-mensagem-personalizada">
+  <p class="mesagemsBD"></p>
+</div>
+
+<div class="conteudo-faleConosco">
+  <div id="formulario" class="validar-form">
+    <form action="/faleConosco/novo" method="post" id="form-faleConosco">
+      <div class="caixaTexto">
+        <label for="nome" class="nomeLabel">Nome Completo:</label>
+        <input
+          class="inputForm controle-erros"
+          type="text"
+          name="nome"
+          id="nome"
+          placeholder="Exp: Fulano de Tal "
+          oninput="validar_nome()"
+        />
+        <p class="helper"></p>
+      </div>
+      <div class="caixaTexto">
+        <label for="email" class="emailLabel">E-mail:</label>
+        <input
+          class="inputForm controle-erros"
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Exp: fulanotal@mail.com"
+          oninput="validar_email()"
+        />
+        <p class="helper"></p>
+      </div>
+
+      <div class="caixaTexto">
+        <label for="telefone" class="telefoneLabel">Telefone</label>
+        <input
+          type="tel"
+          name="telefone"
+          id="telefone"
+          class="inputForm controle-erros"
+          placeholder="Exp:(11)99797-7272 ou 11997977272 "
+          oninput="validar_telefone()"
+        />
+        <p class="helper"></p>
+      </div>
+      <div class="caixaTexto">
+
+        <label for="servicos" class="solucao">Soluções</label>
+        <select
+          class="inputForm validar-select controle-erros"
+          name="servicos"
+          id="servicos"
+          oninput="validar_select()"
+        >
+          <option value="emBranco">Selecione a opção</option>
+          {{#each servicos}}
+            <option value="{{_id}}">{{nome}}</option>
+          {{/each}}
+        </select>
+        <p class="helper"></p>
+      </div>
+      <div class="caixaTexto">
+        <label class="mensagemLabel" for="mensagem">Mensagem:</label>
+        <textarea
+          class="inputTextArea controle-erros"
+          name="mensagem"
+          id="mensagem"
+          cols="20"
+          rows="5"
+          placeholder="Sua mensagem deve conter no minimo 3 caracteres e no maximo 300."
+          oninput="validar_mensagem()"
+        ></textarea>
+        <p class="helper"></p>
+      </div>
+      <div class="caixaCheck">
+        <input
+          type="checkbox"
+          name="autorizacao"
+          id="autorizacao"
+          class="controle-erros"
+          oninput="validar_checkbox()"
+        />
+        <label for="autorizacao" id="autorizacaoLabel">Autorizo o tratamento de
+          dados, Lei-nº 13.709.</label>
+        <a href="" class="A-verTermos">Ver termos.</a>
+        <p class="helper"></p>
+
+      </div>
+      <div class="caixaButton">
+        <a href=""><button
+            name="botaoSubmit"
+            class="validar-submit botao-padrao botao-enviar"
+            type="submit"
+          >Enviar Pedido</button></a>
+      </div>
+    </form>
+  </div>
+
+  <div id="informacoes">
+    <div class="informacoes-conteudo">
+
+      <div id="enderecos">
+        <h2>Redes Sociais</h2>
+        <div class="redeSocial">
+          <a href=""><img
+              class="imgConteudo"
+              src="/imagens/headerFooter/linkedin.png"
+              alt="linkedin"
+            /></a>
+          <a href=""><img
+              class="imgConteudo"
+              src="/imagens/headerFooter/whatsup.png"
+              alt="Whats up"
+            /></a>
+          <a href=""><img
+              class="imgConteudo"
+              src="/imagens/headerFooter/instangran.png"
+              alt="Instangran"
+            /></a>
+        </div>
+      </div>
+      <div id="separacao"></div>
+      <div id="localizacao">
+        <p>Endereço: Rua Waldemar Kost,255 - Hauer, Curitiba,PR, 81810-110.</p>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117003.06184956661!2d-46.759412575406216!3d-23.591932398634047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce57475c3cdae3%3A0xbc1c37b046984e2e!2sAmazon%20Web%20Services!5e0!3m2!1sen!2sbr!4v1669679296696!5m2!1sen!2sbr"
+          width="80%"
+          height="250px"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</div>

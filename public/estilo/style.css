@@ -1,0 +1,84 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,200;1,500&display=swap');
+@import "headerFooter.css"; 
+@import "validacaoInputs.css";
+@import "botoes-inputText-inputArea-form.css";
+
+:root{
+    --pretoPrincipal: #020301;
+    --azulPrincipal: #b1d4e0;
+    --cinzaPrincipal: #9A9da1;
+    --amareloHouver: #ffd230;
+    --cinzaLetra: #b7b6b6;
+    --brancoLetras: #ffffff;
+    --cinzaSeparacao:rgb(228, 228, 228);
+    --cinzaFormulario:rgb(226, 226, 226);
+    --azulAnimacao:rgb(154, 213, 229);
+    --azulBotoes:rgb(5, 123, 202);
+    --vermelhoLinks:rgb(247, 11, 11);
+    --cinzaPlaceHolder:rgb(112, 111, 111);
+    --cinzaLinha:#ddd;
+    --cinzaLinha2:rgb(168, 166, 166);
+    --cinzaLina3:rgba(97, 97, 97, 0.575);
+    --cinzaHouver:#dee0e4;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family:Poppins,Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+body{
+    background-image: linear-gradient(180deg,#9A9da1,#dad8d8);
+}
+.conteudo,main{
+    max-width: 980px;
+    margin: 0 auto;
+}
+.conteudo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.conteudo-zone{
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(255, 255, 255,0.05);
+    box-shadow: 5px 5px 15px -4px var(--pretoPrincipal);
+}
+.logoPrincipalPequeno{
+    display: none;
+}
+#menuRetratil{
+    display: none;
+}
+.JumbotonBox{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.JumbotonBox p{
+    padding: 10px;
+    margin: 10px;
+}
+.imagemTopo{
+    width: 100%;
+}
+.titulo-topo{
+    position: absolute;
+    top:30px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 40px;
+    font-weight: 700;
+    color: white;
+    text-shadow: 5px 5px 10px black;
+}
+
+

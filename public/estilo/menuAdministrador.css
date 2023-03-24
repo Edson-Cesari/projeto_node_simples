@@ -1,0 +1,17 @@
+.offOn{
+    display: none;
+}
+#adm-on-off{
+    display: none;
+}
+#adm-on-off-label{
+    cursor: pointer;
+}
+#adm-on-off:not(checked) ~ #adm-on-off-label{
+    color: rgb(47, 47, 47);
+}
+#adm-on-off:checked ~ #adm-on-off-label{
+    transition: all 1s ease-in-out;
+    color: rgb(255, 227, 43);
+    font-weight: 700;
+}

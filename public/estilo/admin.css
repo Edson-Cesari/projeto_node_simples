@@ -1,0 +1,18 @@
+
+.textp{
+    font-size: 20px;
+    font-weight: 700;
+}
+.textp2{
+    font-size: 12px;
+    font-style: normal;
+    padding: 10px;
+    color: rgb(100, 99, 99);
+}
+.imageAdm{
+    width: 80%;
+}
+.botoes-adm{
+    margin: 25px;
+}
+

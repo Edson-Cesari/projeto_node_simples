@@ -1,0 +1,46 @@
+
+h2 {
+    padding-left: 40px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+.QuemSomos p {
+    padding: 20px;
+    text-align: justify;
+    text-indent: 50px;
+    margin-bottom: 50px;
+}
+#edson h1, #daniel h1 {
+    text-align:left
+}
+#adriana h1, #jeane {
+    text-align:right   
+} 
+#edson p, #daniel {
+    border-top: 1px solid var(--cinzaLinha);
+}
+#adriana p, #jeane {
+    border-top: 1px solid var(--cinzaLinha2); 
+}
+#edson img, #daniel img {
+        border-radius: 50%;
+        border: 1px solid var(--cinzaLinha);
+        padding: 10px;
+        width: 200px;
+        float: left
+}
+#adriana img, #jeane img {
+    border-radius: 50%;
+    border: 1px solid var(--cinzaLinha2);
+    padding: 10px;
+    width: 200px;
+    float: right
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.perfil{
+    margin-bottom: 90px;
+}

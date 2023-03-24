@@ -1,0 +1,37 @@
+<div class="JumbotonBox">
+  <h1 class="titulo-topo">Crie um Serviço</h1>
+  <img
+    class="imagemTopo"
+    src="/imagens/conteudos/admin/adm10Image.jpg"
+    alt=""
+  />
+</div>
+
+
+<div class="caixa-mensagem-personalizada">
+  <p class="mesagemsBD"></p>
+</div>
+
+<div class="conteudo-formulario-comum">
+  <div id="formulario" class="validar-form">
+    <form action="/admin/addServicos/novo" method="post" id="formulario-add-servico">
+
+      <div class="caixaTexto">
+        <label for="nome">Nome do Sevico</label>
+        <input class="inputForm controle-erros2" type="text" name="nome" placeholder="Nome do Serviçõ" oninput="validar_nomeServico()"/>
+        <p class="helper"></p>
+      </div>
+
+      <div class="caixaTexto">
+        <label for="descricao">Descricao</label>
+        <textarea class="inputTextArea controle-erros2" name="descricao" rows="10" placeholder="Breve descrição sobreo que o serviço faz..." oninput="validar_mensagemServico()"></textarea>
+         <p class="helper"></p>
+      </div>
+
+      <div class="caixaButton">
+        <a ><button class="botao-padrao botao-enviar" type="submit">Criar Serviço</button></a>
+      </div>
+    </form>
+
+  </div>
+</div>

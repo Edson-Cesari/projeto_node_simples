@@ -1,0 +1,72 @@
+
+   <div class="JumbotonBox">
+     <h1 class="titulo-topo">Gerencimento de Pedidos</h1>
+     <img class="imagemTopo" src="/imagens/conteudos/admin/adm12Image.jpg" alt="" />
+  </div>
+  
+  <div class="caixa-mensagem-personalizada">
+  <p class="mesagemsBD"></p>
+</div>
+<div class="apresentacao">
+
+
+  <div class="caixaTexto2">
+    <h1>{{pedidos.nome}}</h1>
+    <hr>
+    <p>Email : {{pedidos.email}}</p>
+    <p>Telefone : {{pedidos.telefone}}</p>
+    <hr />
+    <h3>Servico Solicitado : {{pedidos.servicos.nome}}</h3>
+    <p>{{pedidos.servicos.descricao}}</p>
+    <h3>Mensagem do cliente</h3>
+    <p>{{pedidos.mensagem}}</p>
+    <small>Data de Abertura: {{pedidos.data}}</small>
+    <hr />
+  </div>
+</div>
+  <div class="conteudo-formulario-parcial">
+  <div id="formulario2" class="validar-form">
+    <form action="/admin/pedidos/edit" method="post" id="formulario-edit_pedidos">
+    <div class="caixaTexto">
+      <input type="hidden" name="id" value="{{pedidos._id}}" />
+
+      <label for="status">Status:</label>
+      <select class="inputForm " name="status" id="status">
+
+        <option selected value="{{pedidos.status}}">{{pedidos.status}}</option>
+        <option value="Despachado">Despachado</option>
+        <option value="Atendimento">Atendimento</option>
+        <option value="Pendente">Pendente</option>
+        <option value="Cancelado">Cancelado</option>
+        <option value="Finalizado">Finalizado</option>
+      </select>
+      <p class="helper"></p>
+    </div>
+
+    <div class="caixaTexto">
+      <label for="descricao">Descrição</label>
+      <textarea class="inputTextArea2" name="descricao" id="descricao" cols="50" rows="50">
+        {{pedidos.descricao}}
+      </textarea>
+      <p class="helper"></p>
+    </div>
+
+    <div class="caixaTexto">
+      <label for="valor">Valor:</label>
+      <input class="inputForm controle-erros4" type="number" name="valor" id="valor" value="{{pedidos.valor}}" />
+      <p class="helper"></p>
+    </div>
+
+    <div class="caixaTexto">
+      <a href=""><button class="botao-padrao botao-editar" type="submit">Salvar Pedido</button></a>
+    </div>
+  </form>
+  </div>
+  </div>
+   <hr>
+   <div class="apresentacao">
+   <form action="/admin/pedidos/email" method="post">
+    <input type="hidden" name="id" value="{{pedidos._id}}">
+      <a href=""><button class="botao-padrao botao-enviar">Enviar Proposta por email</button></a>
+   </form>
+</div>

@@ -1,0 +1,32 @@
+<div class="JumbotonBox">
+  <h1 class="titulo-topo">Lista de Pedidos</h1>
+  <img
+    class="imagemTopo"
+    src="/imagens/conteudos/admin/adm10Image.jpg"
+    alt=""
+  />
+</div>
+
+{{#each pedidos}}
+
+  <div class="pedido-box">
+    <div class="pedido-box-conteudo">
+      <h3>{{nome}}</h3>
+      <p>Email : {{email}}</p>
+      <h4>Servico Solicitado : {{servicos.nome}}</h4>
+      <small>Data da Solicitação : {{data}}</small>
+      <hr />
+      <div class="painelComandos">
+        <a href="/admin/pedidos/edit/{{_id}}"><button class="botao-padrao botao-editar">Editar</button></a>
+        <form id="botao-escluir-box" action="/admin/pedidos/deletar" method="post">
+          <input type="hidden" name="id" value="{{_id}}" />
+          <a href=""><button class="botao-padrao botao-excluir" type="submit">Apagar</button></a>
+        </form>
+      </div>
+    </div>
+  </div>
+{{else}}
+  <div class="pedido-box">
+    <h3>Sem pedidos.</h3>
+  </div>
+{{/each}}

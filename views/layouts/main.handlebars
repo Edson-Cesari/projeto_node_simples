@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Estilos-->
+    <link rel="stylesheet" href="/estilo/index.css">
+    <link rel="stylesheet" href="/estilo/style.css">
+    <link rel="stylesheet" href="/estilo/responsivo.css">
+    <link rel="stylesheet" href="/estilo/faleConoscoEOutrosFormularios.css" />
+    <link rel="stylesheet" href="/estilo/mensagem.css"/>
+    <link rel="stylesheet" href="/estilo/termos.css">
+    <link rel="stylesheet" href="/estilo/quemSomos.css">
+    <link rel="stylesheet" href="/estilo/solucoes.css">
+    <link rel="stylesheet" href="/estilo/portfolio.css">
+    <link rel="stylesheet" href="/estilo/admin.css">
+    <link rel="stylesheet" href="/estilo/menuAdministrador.css">
+    <link rel="stylesheet" href="/estilo/pedidos.css">
+    <link rel="stylesheet" href="/estilo/botoes-inputText.css">
+    
+    <!--Scripts-->
+    <script src="/scripts/menuLateral.js" defer></script>
+    <script src="/scripts/main.js" defer></script>
+    <script src="/scripts/menuLateral.js" defer></script>
+    <script src="/scripts/menuAdministrador.js" defer></script>
+    <script src="/scripts/mensagem.js" type="module" defer></script>
+    <script src="/scripts/validacaoFaleConosco.js" defer></script>
+    <script src="/scripts/validacaoAddServicos.js" defer></script>
+    <script src="/scripts/validacaoEditServico.js" defer></script>
+
+    <title>Document</title>
+</head>
+<body>
+    {{>_header}}
+    <main>
+      <div class="conteudo-zone">
+        {{{body}}}
+      </div>
+      {{>_whatsup}}
+    </main>
+    {{>_footer}}
+</body>
+</html>

@@ -1,0 +1,39 @@
+<div class="JumbotonBox">
+  <h1 class="titulo-topo">Edite um Serviço</h1>
+  <img class="imagemTopo" src="/imagens/conteudos/admin/adm9Image.jpg" alt="" />
+</div>
+
+<div class="caixa-mensagem-personalizada">
+  <p class="mesagemsBD"></p>
+</div>
+
+<div class="conteudo-formulario-comum">
+
+  <div id="formulario" class="validar-form">
+    <form action="/admin/servicos/edit" method="post" id="formulario-editServicos">
+
+      <div class="caixaTexto">
+        <input type="hidden" name="id" value="{{servicos.id}}" />
+        <label for="nome">Nome do Sevico</label>
+        <input class="inputForm controle-erros3" type="text" name="nome" oninput="validar_nomeServicoEdit()" value="{{servicos.nome}}"/>
+        <p class="helper"></p>
+      </div>
+
+      <div class="caixaTexto">
+        <label for="descricao">Descricao</label>
+        <textarea
+          class="inputTextArea controle-erros3"
+          name="descricao"
+          rows="10"
+          placeholder="Sua mensagem deve conter no minimo 3 caracteres e no maximo 300."
+          oninput="validar_mensagemServicoEdit()"
+        >{{servicos.descricao}}</textarea>
+        <p class="helper"></p>
+      </div>
+
+      <div class="caixaButton">
+        <a href=""><button type="submit" class="validar-submit botao-padrao botao-enviar">Atualizar Serviço</button></a>
+      </div>
+    </form>
+  </div>
+</div>

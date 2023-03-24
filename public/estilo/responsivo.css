@@ -1,0 +1,285 @@
+@media screen And (max-width:975px){
+   
+    .logotipoMedio{
+        display: none;
+    }
+    .logoPrincipalPequeno{
+        display: block;
+        
+    }
+    nav ul{
+        width: auto;
+    }
+}
+@media screen And (max-width:850px){
+    #informacoes{
+        min-width: 500px;
+    }
+    #enderecos{
+        display: none;
+    }
+    .teste{
+        margin-top: 100px;
+    }
+}
+
+@media screen And (max-width:824px){
+    .conteudo{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .logotipoMedioAdminArea{  /*Logotipo Grande alternativo*/
+        display: none;  
+      }
+      .logoPrincipalPequenoAdminArea{ /*Logotipo Pequeno alternativo*/
+          display: none;
+      }
+    .logotipoMedio{
+        display: none;
+    }
+    .logoPrincipalPequeno{
+        display: block;
+    }
+    
+    .redeSocial{
+        display: none;
+    }
+   
+    #menuRetratil{
+        display: block;
+    }
+    .liRedesSocialMenu{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    nav ul{
+    width: 0px;
+    position: absolute;
+    border-end-start-radius: 10px;
+    top:110px;
+    right: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;   
+    background-color: rgb(0, 0, 0,0.9); 
+    overflow: hidden;
+    z-index: 3;
+    }
+    nav ul li{
+      display: block;
+      margin: 0px 20px;
+      margin-right: 50px;
+      
+    }
+    nav ul li:last-child{
+        margin-bottom: 50px;
+    }
+    nav ul li a{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: nowrap;
+        padding: 10px;
+        color: white;
+        gap: 10px;
+    }
+    nav ul li{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: nowrap;
+        padding: 10px;
+        color: white;
+        gap: 10px;
+    }
+    nav ul li a:hover{
+        color: yellow;
+    }
+    #iconeMenu{
+        display: block;
+    }
+
+
+    /*Menu hamburguer*/
+    .menuHamburguer{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 40px;
+    }
+    #menuRetratil{
+        display: none;
+    }
+    .hamburguerLabel{
+        cursor: pointer;
+    }
+   
+    .b1,.b2,.b3{
+        position: relative;
+        display: block;
+        width: 30px;
+        height: 5px;
+        border-radius: 5px;
+        background-color: white;
+        
+    }
+    .b2{
+        top: 6px;
+        
+    }
+    .b3{
+        top: 12px;
+    }
+
+    #menuRetratil:checked ~ .hamburguerLabel .b1{
+       transform: translateY(10px) rotate(45deg) ;
+       transition: all 1s ease-in-out;
+    }
+    #menuRetratil:checked ~ .hamburguerLabel .b2{
+        transform: rotate(-45deg);
+        transition: all 1s ease-in-out;
+    }
+    #menuRetratil:checked ~ .hamburguerLabel .b3{
+        transform: translateY(-5px);
+        background-color: rgb(255, 255, 255,0);
+        transition: all 1s ease-in-out;
+    }
+
+
+    #menuRetratil:not(:checked) ~ .hamburguerLabel .b1{
+        transform: rotate(0deg);
+        transition: all 1s ease-in-out;
+     }
+     #menuRetratil:not(:checked) ~ .hamburguerLabel .b2{
+         transform: rotate(0deg);
+         transition: all 1s ease-in-out;
+     }
+     #menuRetratil:not(:checked)  ~ .hamburguerLabel .b3{
+        transform: translateY(0px);
+         background-color: rgb(255, 255, 255);
+         transition: all 1s ease-in-out;
+     }
+
+     /*Correção do carrosel para mobile*/
+     .organizacao{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+     }
+     .logotipoGrande{
+        width: 90%;
+     }
+     .teste h2{
+        font-size: 20px;
+        text-align: center;
+     }
+     .carrossel{
+        margin: 0 auto;
+        width: 220%;
+        height: 220px;
+        display: flex;
+        overflow: hidden;
+        
+    }
+    .disparadorImagens{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 25px;
+        border-top-left-radius: 100px;
+        background-color: var(--azulAnimacao);
+        box-shadow: 5px 5px 15px -4px var(--pretoPrincipal);
+    
+    }
+    .disparadorImagens{
+        max-width: 300px;
+        min-width: 300px;
+        height: 300px;
+        overflow: hidden;
+        margin-top: 4em;
+        margin-bottom: 1em;
+       
+    
+    }
+   
+    .slides{
+        width: 200%;
+        height: 200%;
+        display: flex;
+    }
+    .container{
+        display: flex;
+        transform: translateX(0);
+        transition: transform 0.5s ease-in-out;
+    }
+    .logo1{
+        height: 250px;
+        
+    }
+    #img{
+        object-fit: cover;
+        width: 250px;
+    }
+
+    .imgIndex{
+        padding-top: 3em;
+        padding-left: 3.15em;
+        width: 200px; 
+    }
+    
+    .manual-navigation{
+        position: absolute;
+        width: 200px;
+        display: flex;
+        justify-content: center;
+        margin-top: 11.3em;
+        margin-left: 3em;
+    }
+    .navigation-auto{
+        position: absolute;
+        width: 200px;
+        margin-top: 11.3em;
+        margin-left: 3em;
+        display: flex;
+        justify-content: center;
+    }
+    .manual-btn:not(:last-child){
+        margin-right: 10px;
+    }
+    
+    .manual-btn:hover{
+        background-color: #fff;
+    }
+    
+    #radio1:checked ~ .first{
+        margin-left: 0;
+    }
+    #radio2:checked ~ .first{
+        margin-left: -19%;
+    }
+    #radio3:checked ~ .first{
+        margin-left: -44%;
+    }
+    #radio4:checked ~ .first{
+        margin-left: -69%;
+    }
+    #radio5:checked ~ .first{
+        margin-left: -94%;
+    }
+    #radio6:checked ~ .first{
+        margin-left: -119%;
+    }
+    .logotipoPequeno{
+        height: 50px;
+    }
+}
+
