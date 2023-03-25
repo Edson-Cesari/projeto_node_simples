@@ -4,8 +4,13 @@ const {engine} = require("express-handlebars");
 const { default: mongoose, Schema } = require("mongoose");
 const path = require('path');
 const app = express();
+const session = require('express-session');
+const flash = require('connect-flash');
+const passaport = require
 const admin = require("./routers/admin")
 require("dotenv").config();
+const passport = require("passport");
+require("./config/auth")(passport);
 
 //Chamando o modelo de servico
 require("./models/Servico");const Servico = mongoose.model("servicos");
@@ -18,6 +23,31 @@ const bodyParser = require("body-parser");
 
 
 //Configurações
+    // Sessão
+    app.use(session({
+        secret: process.env.SESSION_SECRET,
+        resave: true,
+        saveUninitialized: true
+    }))
+
+    // Definiçoes de seccao
+    app.use(passport.initialize());
+    app.use(passport.session())
+
+    //Flash
+    app.use(flash());
+
+    //Midleware
+    app.use((req,res,next)=>{
+        res.locals.sucess_msg = req.flash("success_msg");
+        res.locals.error_msg = req.flash("error_msg");
+        res.locals.error = req.flash("error");
+        res.locals.user = req.user || null;
+
+        next();
+    })
+
+
     //Body- Parser
     app.use(bodyParser.urlencoded({extended: true}));
     app.use(bodyParser.json());
@@ -91,8 +121,8 @@ const bodyParser = require("body-parser");
                 }
                 
                 new Pedido(novoPedido).save().then(()=>{
-
                     console.log("Pedido criado com sucesso!");
+                    req.flash("success_msg","Pedido socilidado com sucesso!")
                     res.redirect("/faleConosco");
                     
                 }).catch((err)=>{

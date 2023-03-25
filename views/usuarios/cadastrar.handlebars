@@ -1,0 +1,41 @@
+<div class="JumbotonBox">
+  <h1 class="titulo-topo">Crie um Serviço</h1>
+  <img
+    class="imagemTopo"
+    src="/imagens/conteudos/admin/adm10Image.jpg"
+    alt=""
+  />
+</div>
+<div class="caixa-mensagem-personalizada">
+  <p class="mesagemsBD"></p>
+</div>
+
+<div class="conteudo-formulario-comum">
+  <div id="formulario" class="validar-form">
+    <form action="" method="post">
+        <div class="caixaTexto">
+            <label for="nome">Nome:</label>
+            <input class="inputForm controle-erros2" type="text" name="nome" placeholder="Exp: Fulano de tal" oninput="validar_nome_login()"/>
+            <p class="helper"></p>
+        </div>
+         <div class="caixaTexto">
+            <label for="email">Email:</label>
+            <input class="inputForm controle-erros2" type="email" name="email" placeholder="Exp: fulanotal@mail.com" oninput="validar_email_login()"/>
+            <p class="helper"></p>
+        </div>    
+        <div class="caixaTexto">
+            <label for="senha">Senha:</label>
+            <input class="inputForm controle-erros2" type="password" name="senha" placeholder="sua senha" oninput="validar_email_senha()"/>
+            <p class="helper"></p>
+        </div>  
+        <div class="caixaTexto">
+            <label for="senha">Repita a Senha:</label>
+            <input class="inputForm controle-erros2" type="password" name="senha" placeholder="sua senha" oninput="validar_email_senha()"/>
+            <p class="helper"></p>
+        </div> 
+         <div class="caixaButton">
+            <a ><button class="botao-padrao botao-enviar" type="submit">Entrar</button></a>
+        </div>
+    </form>
+  </div>
+</div>
