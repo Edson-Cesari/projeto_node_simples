@@ -14,3 +14,22 @@
     font-weight: 700;
     color: rgb(76, 0, 0); 
 }
+
+.msgBDCorreto,.msgBDErrado{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    font-size: 15px;
+    border-radius: 15px;
+}
+.msgBDCorreto{
+    background-color: rgb(213, 255, 154);
+    color: rgb(22, 32, 1);
+
+}
+.msgBDErrado{
+    background-color: rgb(241, 138, 138);
+    color: rgb(69, 3, 3);
+}

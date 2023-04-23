@@ -33,10 +33,12 @@ const Pedido = mongoose.model("pedidos");
         //Exclusao no banco de dados
         router.post("/servicos/deletar",(req,res)=>{
             Servico.deleteOne({_id: req.body.id}).then(()=>{
+                req.flash("success_msg","Servico apagado com Sucesso!");
                 console.log("Servico deletado com sucesso!");
                 res.redirect("/admin/servicos");
 
             }).catch((err)=>{
+                req.flash("error_msg","Ocorreu um erro ao apagar o serviço, por favor tente novamente.")
                 console.log("Ocorreu um erro ao apagar o servico:"+err);
                 res.redirect("/admin/servicos");
             });
@@ -48,6 +50,7 @@ const Pedido = mongoose.model("pedidos");
                 console.log("Servico carregado com sucesso!");
                 res.render("admin/editServicos",{servicos: servicos});
             }).catch((err)=>{
+                req.flash("error_msg","Ocorreu um erro ao carregar o serviço, por favor tente novamente.")
                 console.log("Ocorreu um erro ao carregar o arquivo:"+err);
                 res.redirect("/admin/servicos");
             });
@@ -61,14 +64,17 @@ const Pedido = mongoose.model("pedidos");
                 servicos.descricao = req.body.descricao;
 
                 servicos.save().then(()=>{
+                    req.flash("success_msg","Servico editado com Sucesso!");
                     console.log("Servico editado com sucesso!");
                     res.redirect("/admin/servicos");
                 }).catch((err)=>{
+                    req.flash("error_msg","Ocorreu um erro ao editar o serviço, por favor tente novamente.")
                     console.log("Ocorreu um erro ao salvar o servico:"+err);
                     res.redirect("/admin/servicos");
                 });
 
             }).catch((err)=>{
+                req.flash("error_msg","Ocorreu um erro ao salvar o serviço, por favor tente novamente.")
                 console.log("Ocorreu um erro ao salvar o servico:"+err);
                 res.redirect("/admin/servicos");
             });
@@ -83,30 +89,20 @@ const Pedido = mongoose.model("pedidos");
         //Inclusao no banco de dados (Formulario).
         router.post("/addServicos/novo",(req,res)=>{
 
-            if(!req.body.nome || typeof req.body.nome == undefined || req.body.nome == null){
-                console.log("Campos nome invalido");
-            
-            }
-        
-            if(!req.body.descricao || typeof req.body.descricao == undefined || req.body.descricao == null){
-                console.log("Campos descricao invalido");
-               
-            }else{
                 const novoServico = {
                     nome: req.body.nome,
                     descricao: req.body.descricao
                 }
                 new Servico(novoServico).save().then(()=>{
+                    req.flash("success_msg","Servico salvo com Sucesso!");
                     console.log("Servico salvo com Sucesso!");
-                    res.redirect("/servicos");
+                    res.redirect("/admin/servicos");
 
                 }).catch((err)=>{
+                    req.flash("error_msg","Ocorreu um erro ao salvar o serviço, por favor tente novamente.")
                     console.log("Ocorreu um erro ao salvar o servico, ERRO:"+err);
                     res.redirect("/admin/addServicos");
                 });
-
-            }
-         
         });
 
     //Adm Pedidos
@@ -115,6 +111,7 @@ const Pedido = mongoose.model("pedidos");
             Pedido.find().populate("servicos").sort({date:'desc'}).then((pedidos)=>{
                 res.render("admin/pedidos",{pedidos: pedidos});
             }).catch((err)=>{
+                req.flash("error_msg","Ocorreu um erro ao carregar os pedidos, por favor tente novamente.")
                 console.log("Ocorreu um erro ao trazer os pedidos");
                 res.redirect("/admin/");
             });
@@ -129,6 +126,7 @@ const Pedido = mongoose.model("pedidos");
                 res.render("admin/admPedidos",{pedidos: pedidos});
 
             }).catch((err)=>{
+                req.flash("error_msg","Ocorreu um erro ao carregar os pedidos, por favor tente novamente.")
                 console.log("Ocorreu um erro durante o carregamento do pedido"+err);
                 res.redirect("/admin/pedidos");
             });
@@ -150,14 +148,17 @@ const Pedido = mongoose.model("pedidos");
                 pedidos.valor = req.body.valor;
 
                 pedidos.save().then(()=>{
+                    req.flash("success_msg","Servico Editado com Sucesso!");
                     console.log("Servico editado com sucesso!");
                     res.redirect("/admin/pedidos");
                 }).catch((err)=>{
+                    req.flash("error_msg","Ocorreu um erro ao editar os pedidos, por favor tente novamente.")
                     console.log("Ocorreu um erro ao editar o pedido."+err);
                     res.redirect("/admin/pedidos");
                 });
 
             }).catch((err)=>{
+                req.flash("error_msg","Ocorreu um erro ao carregar os pedidos, por favor tente novamente.")
                 console.log("Ocorreu um erro durante o carregamento do pedido"+err);
                 res.redirect("/admin/pedidos");
             });
@@ -166,9 +167,11 @@ const Pedido = mongoose.model("pedidos");
         //Deletando pedidos
         router.post("/pedidos/deletar",(req,res)=>{
             Pedido.deleteOne({_id: req.body.id}).then(()=>{
+                req.flash("success_msg","Servico apagado com Sucesso!");
                 console.log("Pedido apagado com sucesso!");
                 res.redirect("/admin/pedidos");
             }).catch((err)=>{
+                req.flash("error_msg","Ocorreu um erro ao deletar o pedido, por favor tente novamente.")
                 console.log("Ocorreu um erro ao apagar o pedido, ERRO:"+err);
                 res.redirect("/admin/pedidos");
             });
